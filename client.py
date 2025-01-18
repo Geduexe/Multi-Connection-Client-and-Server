@@ -1,6 +1,7 @@
 import sys
 import selectors
 import types
+import socket
 
 sel = selectors.DefaultSelector()
 
@@ -37,7 +38,7 @@ def service_connection(key, mask):
             sel.unregister(sock)
             sock.close()
 
-import socket
+
 
 def start_connections(host, port, num_conns):
     for i in range(num_conns):
